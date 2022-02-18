@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+/* NAV CSS CONTENT */
+#Nav nav{
+  display: flex;
+  justify-content: right !important;
+}
+
+/* 
+HOME CSS CONTENT */
+
+ div.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+div.flex-container div.column{
+  display: flex; 
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
