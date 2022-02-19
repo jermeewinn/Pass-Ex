@@ -3,7 +3,8 @@ import 'bulma/css/bulma.min.css';
 import React from "react";
 var city = "Oxford";
 var country = "United Kingdom";
-var url = `https://timezone.abstractapi.com/v1/current_time/?api_key=3dcfef3df620458bb458313d22d4666a&location=${city}, ${country}`;
+var timeZoneURL = `https://timezone.abstractapi.com/v1/current_time/?api_key=3dcfef3df620458bb458313d22d4666a&location=${city}, ${country}`;
+var curencyAPI= "http://api.exchangeratesapi.io/v1/latest?access_key=1438debad47ca5a53fe7985f3fb8087d";
 
 
 function submitCityCountry(e) {
