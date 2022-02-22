@@ -6,7 +6,7 @@ var country = "United Kingdom";
 var timeZoneURL = `https://timezone.abstractapi.com/v1/current_time/?api_key=3dcfef3df620458bb458313d22d4666a&location=${city}, ${country}`;
 var curencyAPI =
   "http://api.exchangeratesapi.io/v1/latest?access_key=1438debad47ca5a53fe7985f3fb8087d";
-
+const timeZoneAPIKey = "15e8f4b378ef45c2a734b8402fcee81a";
 
 function Home() {
     //this is code copied in order to use tinymce
@@ -41,7 +41,7 @@ function Home() {
 
     // we will use async/await to fetch this data
     async function getData() {
-      const response = await fetch(`https://timezone.abstractapi.com/v1/current_time/?api_key=3dcfef3df620458bb458313d22d4666a&location=${city}, ${country}`);
+      const response = await fetch(`https://timezone.abstractapi.com/v1/current_time/?api_key=${timeZoneAPIKey}&location=${city}, ${country}`);
       const data = await response.json();
       console.log(data);
       setTimeZone(data);
@@ -121,7 +121,7 @@ function Home() {
                 <input type="submit" value="Submit" />
               </form>
               <div className="timezone-display">
-                  {/* timeZone.datetime */}
+
               </div>
             </div>
             <div className="images"></div>
