@@ -55,7 +55,16 @@ div.flex-container div.column{
   flex: 1;
   
 }
-
+div.past-posts{
+  border: 5px solid #B5E2FA;
+  background-color: #FCD7AD;
+  margin-bottom: 20px;
+}
+div.liked-posts{
+  border: 5px solid #B5E2FA;
+  background-color: #FCD7AD;
+  margin-bottom: 20px;
+}
 div.blog-feed{
   border: 5px solid #B5E2FA;
   background-color: #FCD7AD;
@@ -70,7 +79,28 @@ div.timezone-converter{
   background-color: #FCD7AD;
 }
 /* Blog feed css content */
-section.home div.blog-feed h2{
+div.blog-feed h2{
+  
+  color: #383F51; 
+  font-family: 'Raleway',sans-serif; 
+  font-size: 30px; font-weight: 800; 
+  line-height: 72px; margin: 0 0 24px; 
+  text-align: center; 
+  text-transform: uppercase;
+  margin-bottom: -5px;
+}
+
+div.past-posts h1{
+  
+  color: #383F51; 
+  font-family: 'Raleway',sans-serif; 
+  font-size: 30px; font-weight: 800; 
+  line-height: 72px; margin: 0 0 24px; 
+  text-align: center; 
+  text-transform: uppercase;
+  margin-bottom: -5px;
+}
+div.liked-posts h1{
   
   color: #383F51; 
   font-family: 'Raleway',sans-serif; 
@@ -108,7 +138,7 @@ section.home button{
   margin-bottom: 10px;
 }
 
-section.home div.blog-feed{
+div.blog-feed{
   background-color: #FCD7AD;
 }
 .stripe1 {
