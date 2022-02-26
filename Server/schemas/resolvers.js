@@ -24,8 +24,28 @@ const resolvers = {
                 .select('-__v -password')
                 .populate('posts')
         },
-        posts: async (parent)
+        posts: async (parent, { username }) => {
+            const params = username ? { username } : {};
+            return Post.find(params).sort({ createdAt: -1 });
+        },
+        post: async (parent, { _id }) => {
+            return Post.findOne({ _id });
+        }
     },
+
+    Mutation: {
+        login: async (parent, { email, password }) => {
+            const user = await User.findOne({ email });
+            if (!user) {
+                throw new AuthenticationError('Incorrect credentials');
+            }
+
+            const correctPw = await user.isCorrectPassword(password);
+            if (!correctPw) {
+                throw new AuthenticationError('Incorrect credentials');
+            }
+        }
+    }
     
 };
 
