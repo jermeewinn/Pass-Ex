@@ -13,7 +13,7 @@ const typeDefs = gql`
         postText: String
         createdAt: String
         username: String
-        reactionCount: Int
+        commentCount: Int
         comments: [Comment]
     }
 
