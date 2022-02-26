@@ -76,5 +76,9 @@ export const ADD_COMMENT = gql`
         }
     }
 `;
-
-export const DELETE_COMMENT = gql``;
+//this may also need to be revised
+export const DELETE_COMMENT = gql`
+    mutation deleteComment($postId: String!) {
+        deleteComment(postId: $postId)
+    }
+`;
