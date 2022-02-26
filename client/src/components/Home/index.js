@@ -55,6 +55,7 @@ function Home() {
           <div className="right-column">
             <div className="blog-feed">
               <h2>Blog Feed</h2>
+              <p>no posts yet</p>
             </div>
           </div>
         </div>

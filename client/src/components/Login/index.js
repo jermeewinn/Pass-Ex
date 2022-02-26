@@ -7,34 +7,32 @@ function Login() {
 
         <section className="login">
             <form class="login-form">
-                <div>
+                <div className="entry-field">
+                    <div className="color-correct">
+                    <h2>Have an Account? <br></br> Sign in Here</h2>
                     <label for="email-login">email:</label>
-                    <input type="text" id="email-login" />
-                </div>
-                <div>
+                    <input class="input is-info" type="text" id="email-login" />
                     <label for="password-login">password:</label>
-                    <input type="password" id="password-login" />
+                    <input class="input is-info" type="password" id="password-login" />
+                    <div>
+                        <button className="button is-info is-outlined" type="submit">login</button>
+                    </div>
                 </div>
-                <div>
-                    <button type="submit">login</button>
                 </div>
                 </form>
 
-                <form class="signup-form">
-                <div>
+            <form className="signup-form">
+                <div className="entry-field">
+                    <div className="color-correct">
+                    <h2>New to Pass Ex? <br></br> Create an Account </h2>
                     <label for="username-signup">username:</label>
-                    <input type="text" id="username-signup" />
-                </div>
-                <div>
+                    <input class="input is-info" type="text" id="username-signup" />
                     <label for="email-signup">email:</label>
-                    <input type="text" id="email-signup" />
-                </div>
-                <div>
+                    <input class="input is-info" type="text" id="email-signup" />
                     <label for="password-signup">password:</label>
-                    <input type="password" id="password-signup" />
+                    <input class="input is-info" type="password" id="password-signup" />
+                    <button className="button is-info is-outlined" type="submit">signup</button>
                 </div>
-                <div>
-                    <button type="submit">signup</button>
                 </div>
             </form>
             <div>
