@@ -24,29 +24,20 @@ function Home() {
   //here is where we get the input onsubmit
   const [city, setCity] = useState("");
   const [country, setCountry] = useState("");
+  const [timeZone, setTimeZone] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const payload = {
-      city: city,
-      country: country,
-    };
-
-    console.log(payload);
-};
-// utilizing timezone api here
-    const [timeZone, setTimeZone] = useState(null);
-  useEffect(() => {
+    
     getData();
-
+  };
     // we will use async/await to fetch this data
     async function getData() {
       const response = await fetch(`https://timezone.abstractapi.com/v1/current_time/?api_key=${timeZoneAPIKey}&location=${city}, ${country}`);
       const data = await response.json();
       console.log(data);
       setTimeZone(data);
-    }
-    });
+    };
 
   return (
     <section className="home">
@@ -55,6 +46,20 @@ function Home() {
           <div className="right-column">
             <div className="blog-feed">
               <h2>Blog Feed</h2>
+              <section className="candy-stripe">
+                <ul>
+                  <li className="stripe1"></li>
+                  <li className="stripe1"></li>
+                  <li className="stripe1"></li>
+                  <li className="stripe1"></li>
+                  <li className="stripe1"></li>
+                  <li className="stripe1"></li>
+                  <li className="stripe1"></li>
+                  <li className="stripe1"></li>
+                  <li className="stripe1"></li>
+                  <li className="stripe1"></li>
+                </ul>
+                </section>
               <p>no posts yet</p>
             </div>
           </div>
@@ -63,7 +68,21 @@ function Home() {
           <div className="left-column">
             <div className="new-post">
               <h2>New Post</h2>
-              <form method="post" class="new-post-form">
+              <section className="candy-stripe">
+                <ul>
+                  <li className="stripe1"></li>
+                  <li className="stripe1"></li>
+                  <li className="stripe1"></li>
+                  <li className="stripe1"></li>
+                  <li className="stripe1"></li>
+                  <li className="stripe1"></li>
+                  <li className="stripe1"></li>
+                  <li className="stripe1"></li>
+                  <li className="stripe1"></li>
+                  <li className="stripe1"></li>
+                </ul>
+                </section>
+              <form method="post" className="new-post-form">
                 <div>
                   <Editor
                     apiKey='dmpg80qwq1eyjegxuk4d0u6fj4l0he5nbo5y2y5hve8ywi5n'
@@ -87,19 +106,20 @@ function Home() {
                     }}
                   />
 
-                  <button onClick={log}>Create Post</button>
+                  <button className="button is-info is-focused" onClick={log}>Create Post</button>
                 </div>
               </form>
             </div>
             <div className="currency-converter">
-              <h2>Currency Converter</h2>
+              <h2></h2>
             </div>
             <div className="timezone-converter">
               <h2>Time Zone Converter</h2>
               <form onSubmit={handleSubmit}>
-                <label>
+                <label className="label">
                   City:
                   <input
+                    className="input is-info"
                     type="text"
                     name="city"
                     value={city}
@@ -108,9 +128,9 @@ function Home() {
                     }}
                   />
                 </label>
-                <label>
+                <label className="label">
                   Country:
-                  <input
+                  <input className="input is-info"
                     type="text"
                     name="country"
                     value={country}
@@ -119,10 +139,9 @@ function Home() {
                     }}
                   />
                 </label>
-                <input type="submit" value="Submit" />
+                <input className="button is-info is-focused" type="submit" value="Submit" />
               </form>
               <div className="timezone-display">
-
               </div>
             </div>
             <div className="images"></div>

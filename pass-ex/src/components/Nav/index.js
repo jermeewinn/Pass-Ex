@@ -4,18 +4,18 @@ import { Link } from "react-router-dom";
 function Nav() {
     return (
         <section>        
-          <section class="candy-stripe1">
+          <section className="candy-stripe1">
           <ul>
-            <li class="stripe"></li>
-            <li class="stripe"></li>
-            <li class="stripe"></li>
-            <li class="stripe"></li>
-            <li class="stripe"></li>
-            <li class="stripe"></li>
-            <li class="stripe"></li>
-            <li class="stripe"></li>
-            <li class="stripe"></li>
-            <li class="stripe"></li>
+            <li className="stripe"></li>
+            <li className="stripe"></li>
+            <li className="stripe"></li>
+            <li className="stripe"></li>
+            <li className="stripe"></li>
+            <li className="stripe"></li>
+            <li className="stripe"></li>
+            <li className="stripe"></li>
+            <li className="stripe"></li>
+            <li className="stripe"></li>
           </ul>
           </section>
           <section id="Nav">
@@ -43,18 +43,18 @@ function Nav() {
             </nav>
           </header>
           </section>
-          <section class="candy-stripe">
+          <section className="candy-stripe">
             <ul>
-              <li class="stripe"></li>
-              <li class="stripe"></li>
-              <li class="stripe"></li>
-              <li class="stripe"></li>
-              <li class="stripe"></li>
-              <li class="stripe"></li>
-              <li class="stripe"></li>
-              <li class="stripe"></li>
-              <li class="stripe"></li>
-              <li class="stripe"></li>
+              <li className="stripe"></li>
+              <li className="stripe"></li>
+              <li className="stripe"></li>
+              <li className="stripe"></li>
+              <li className="stripe"></li>
+              <li className="stripe"></li>
+              <li className="stripe"></li>
+              <li className="stripe"></li>
+              <li className="stripe"></li>
+              <li className="stripe"></li>
             </ul>
           </section>
       </section>

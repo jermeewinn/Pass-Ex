@@ -53,19 +53,84 @@ div.flex-container div.column{
   flex-direction: column;
   flex-basis: 100%;
   flex: 1;
+  
 }
 
-
+div.blog-feed{
+  border: 5px solid #B5E2FA;
+  background-color: #FCD7AD;
+}
+div.new-post{
+  border: 5px solid #B5E2FA;
+  background-color: #FCD7AD;
+  margin-bottom: 20px;
+}
+div.timezone-converter{
+  border: 5px solid #B5E2FA;
+  background-color: #FCD7AD;
+}
 /* Blog feed css content */
 section.home div.blog-feed h2{
-  background-color: #FCD7AD;
-  color: #A57548;
-  border: 1px solid #F6C28B;
+  
+  color: #383F51; 
+  font-family: 'Raleway',sans-serif; 
+  font-size: 30px; font-weight: 800; 
+  line-height: 72px; margin: 0 0 24px; 
+  text-align: center; 
+  text-transform: uppercase;
+  margin-bottom: -5px;
 }
+
+section.home div.new-post h2{
+  color: #383F51; 
+  font-family: 'Raleway',sans-serif; 
+  font-size: 30px; font-weight: 800; 
+  line-height: 72px; margin: 0 0 24px; 
+  text-align: center; 
+  text-transform: uppercase;
+  margin-bottom: -5px;
+}
+
+section.home div.timezone-converter h2{
+  color: #383F51; 
+  font-family: 'Raleway',sans-serif; 
+  font-size: 20px; font-weight: 800; 
+  line-height: 72px; margin: 0 0 24px; 
+  text-align: center; 
+  text-transform: uppercase;
+  margin-bottom: -5px;
+  border: 5px solid #B5E2FA;
+}
+
+
+section.home button{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 section.home div.blog-feed{
   background-color: #FCD7AD;
 }
+.stripe1 {
+  height: 1rem;
+  width: 100%;
+  margin: 0;
+  -webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+          clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+.stripe1:nth-child(even) {
+  background-color: #B5E2FA;
+  width: 90%;
+}
 
+section.home input{
+  margin-bottom: 10px;
+  
+}
+section.home label{
+  margin-top: 10px;
+  
+}
 /* nav css */
 /* NAV CSS CONTENT */
 #Nav nav{
@@ -86,7 +151,9 @@ section.home div.blog-feed{
   color: #383F51; 
   font-family: 'Raleway',sans-serif; 
   font-size: 62px; font-weight: 800; 
-  line-height: 72px; margin: 0 0 24px; text-align: center; text-transform: uppercase;
+  line-height: 72px; margin: 0 0 24px; 
+  text-align: center; 
+  text-transform: uppercase;
   padding: 150px;
 
 
@@ -133,6 +200,7 @@ section.home div.blog-feed{
   width: 100%;
   justify-content: flex-end;
   margin-top: 20px;
+  margin-bottom: 5px;
 
 }
 .candy-stripe1 ul {
@@ -206,12 +274,29 @@ form.signup-form{
 form.signup-form button{
   background-color: #82DDF0;
   margin-top: 10px;
-  margin-left: 60px;
-  margin-right: 60px;
+
   
   
 }
 .login h2{
   margin-bottom: 15px;
 
+}
+
+
+
+
+
+footer, img{
+  height: 40px;
+  width: 40px;
+  margin-right: 40px;
+  margin-left: 40px;
+}
+footer{
+  margin-left: 450px;
+}
+section.footer div.p h3{
+  padding-bottom: 30px;
+  font-weight: bold;
 }
