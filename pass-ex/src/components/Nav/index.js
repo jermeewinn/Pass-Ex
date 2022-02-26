@@ -20,7 +20,8 @@ function Nav() {
           </section>
           <section id="Nav">
           <div id="title">
-            <a id="title-words" href="/">
+            <a href="/"><img id='stamp' src="https://mpng.subpng.com/20180920/tty/kisspng-postage-stamps-portable-network-graphics-mail-adob-postage-stamp-png-images-free-download-5ba43201d2f954.3973495615374873618642.jpg" alt="stamp"></img></a>
+            <a id="title-words" href="/Home">
                 Pass X
             </a>
             <p>“Travel is the only thing you buy that makes you richer”<br></br> – Anonymous</p>
