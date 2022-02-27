@@ -38,11 +38,26 @@ const typeDefs = gql`
     }
 
     type Mutation {
+        addPost(
+         postText: String
+         createdAt: String
+         username: String
+         commentCount: Int
+         comments: [Comment] 
+        ): Post
+        deletePost(_id: ID!): Ticket
+        updatePost(
+         postText: String
+         _id: String!
+        ): Post
         login(email: String!, password: String!): Auth
-        addUser(username: String!, email: String!, password: String!): Auth
-        addPost(postText: String!): Post
-        deletePost(postId: ID!): User
+        addUser(
+            username: String!, 
+            email: String!, 
+            password: String!
+        ): Auth
         addComment(postId: ID!, commentBody: String!): Post
+        updateComment(commentBody:String!): Comment
         deleteComment(postId: String!): Comment
     }
 `;
