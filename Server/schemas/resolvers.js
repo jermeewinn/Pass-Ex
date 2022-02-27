@@ -109,7 +109,20 @@ const resolvers = {
             }
             
             throw new AuthenticationError('You need to be logged in!');
-        }
+        },
+        updateComment: async (parent, {message, commentId }, context) => {
+            if (context.user) {
+              const updateComment = await Comment.findOneAndUpdate(
+                { _id: commentId },
+                { $push: { comments: { message, unit: context.user.post } } },
+                { new: true, runValidators: true }
+              );
+      
+              return updateComment;
+            }
+      
+            throw new AuthenticationError('You need to be logged in to comment on a ticket!');
+          },
     }
 };
 
