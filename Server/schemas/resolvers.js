@@ -71,9 +71,9 @@ const resolvers = {
             throw new AuthenticationError('You need to be logged in!');
         },
         deletePost: async (paerent, args, context) => {
-            //ToDo: Delete ticket id from user field
+            //ToDo: Delete post id from user field
             if (context.user) {
-              const ticketId = args._id;
+              const deleteId = args._id;
               const isAdmin = await verifyAdmin(context.user.unit);
               if (isAdmin) {
                 await User.findByIdAndUpdate(
@@ -92,7 +92,7 @@ const resolvers = {
             }
       
             throw new AuthenticationError(
-              "You need to be logged in, to delete a ticket"
+              "You need to be logged in, to delete a post"
             );
             
         },
@@ -121,7 +121,7 @@ const resolvers = {
               return updateComment;
             }
       
-            throw new AuthenticationError('You need to be logged in to comment on a ticket!');
+            throw new AuthenticationError('You need to be logged in to comment on a post!');
           },
     }
 };

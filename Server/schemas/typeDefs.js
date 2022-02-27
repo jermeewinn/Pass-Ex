@@ -43,9 +43,9 @@ const typeDefs = gql`
          createdAt: String
          username: String
          commentCount: Int
-         comments: [Comment] 
+         comments: String 
         ): Post
-        deletePost(_id: ID!): Ticket
+        deletePost(_id: ID!): Post
         updatePost(
          postText: String
          _id: String!
