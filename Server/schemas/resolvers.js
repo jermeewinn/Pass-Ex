@@ -70,6 +70,33 @@ const resolvers = {
             
             throw new AuthenticationError('You need to be logged in!');
         },
+        deletePost: async (paerent, args, context) => {
+            //ToDo: Delete ticket id from user field
+            if (context.user) {
+              const ticketId = args._id;
+              const isAdmin = await verifyAdmin(context.user.unit);
+              if (isAdmin) {
+                await User.findByIdAndUpdate(
+                  { _id: context.user._id },
+                  { $pull: { posts: post._id } },
+                  { new: true }
+               );
+                return post.findOneAndDelete({ ...args });
+              }
+              // 
+              await User.findByIdAndUpdate(
+                { _id: context.user._id },
+                { $pull: { posts: post._id } },
+                { new: true }
+              );
+            }
+      
+            throw new AuthenticationError(
+              "You need to be logged in, to delete a ticket"
+            );
+            
+        },
+       
         addComment: async (parent, { postId, commentBody }, context) => {
             if (context.user) {
                 const updatedPost = await Post.findOneAndUpdate(
