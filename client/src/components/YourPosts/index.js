@@ -9,6 +9,20 @@ function YourPosts() {
                     <div className="right-column">
                         <div className="blog-feed">
                             <h2>Blog Feed</h2>
+                            <section className="candy-stripe">
+                            <ul>
+                            <li className="stripe1"></li>
+                            <li className="stripe1"></li>
+                            <li className="stripe1"></li>
+                            <li className="stripe1"></li>
+                            <li className="stripe1"></li>
+                            <li className="stripe1"></li>
+                            <li className="stripe1"></li>
+                            <li className="stripe1"></li>
+                            <li className="stripe1"></li>
+                            <li className="stripe1"></li>
+                            </ul>
+                            </section>
                         </div>
                     </div>
                 </div>

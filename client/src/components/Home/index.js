@@ -20,34 +20,43 @@ function Home() {
       console.log(editorRef.current.getContent());
     }
   };
-
+  const apiKey = "d0a06a26fc67ad3dcc286204f13f1864";
   //here is where we get the input onsubmit
   const [city, setCity] = useState("");
   const [country, setCountry] = useState("");
+  const [weather, setWeather] = useState(null);
+  const [Day, setDay] = useState(null);
+  const [time, setTime] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const payload = {
-      city: city,
-      country: country,
-    };
-
-    console.log(payload);
-};
-// utilizing timezone api here
-    const [timeZone, setTimeZone] = useState(null);
-  useEffect(() => {
-    getData();
-
+    
+    getData(city);
+  };
     // we will use async/await to fetch this data
     async function getData() {
-      const response = await fetch(`https://timezone.abstractapi.com/v1/current_time/?api_key=${timeZoneAPIKey}&location=${city}, ${country}`);
+      const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${apiKey}`);
       const data = await response.json();
       console.log(data);
-      setTimeZone(data);
-    }
-    });
+      var today = new Date();
+      var date = (today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear()
+      var dateTime = new Date(data.dt * 1000);;
+      // Hours part from the timestamp
+      var hours = dateTime.getHours();
+      // Minutes part from the timestamp
+      var minutes = dateTime.getMinutes();
+      var newTime = hours + ':' + minutes;
+      setTime(newTime);
+      setDay(date);
+      setWeather(`${data.main.temp} °C`);
+      setCountry(data.sys.country);
 
+    };
+  // async function getMoreData(coordinates){
+  //   const response = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`);
+  //     const data = await response.json();
+  //     console.log(data);
+  // }
   return (
     <section className="home">
       <div className="flex-container">
@@ -55,6 +64,21 @@ function Home() {
           <div className="right-column">
             <div className="blog-feed">
               <h2>Blog Feed</h2>
+              <section className="candy-stripe">
+                <ul>
+                  <li className="stripe1"></li>
+                  <li className="stripe1"></li>
+                  <li className="stripe1"></li>
+                  <li className="stripe1"></li>
+                  <li className="stripe1"></li>
+                  <li className="stripe1"></li>
+                  <li className="stripe1"></li>
+                  <li className="stripe1"></li>
+                  <li className="stripe1"></li>
+                  <li className="stripe1"></li>
+                </ul>
+                </section>
+              <p>no posts yet</p>
             </div>
           </div>
         </div>
@@ -62,7 +86,21 @@ function Home() {
           <div className="left-column">
             <div className="new-post">
               <h2>New Post</h2>
-              <form method="post" class="new-post-form">
+              <section className="candy-stripe">
+                <ul>
+                  <li className="stripe1"></li>
+                  <li className="stripe1"></li>
+                  <li className="stripe1"></li>
+                  <li className="stripe1"></li>
+                  <li className="stripe1"></li>
+                  <li className="stripe1"></li>
+                  <li className="stripe1"></li>
+                  <li className="stripe1"></li>
+                  <li className="stripe1"></li>
+                  <li className="stripe1"></li>
+                </ul>
+                </section>
+              <form method="post" className="new-post-form">
                 <div>
                   <Editor
                     apiKey='dmpg80qwq1eyjegxuk4d0u6fj4l0he5nbo5y2y5hve8ywi5n'
@@ -86,19 +124,20 @@ function Home() {
                     }}
                   />
 
-                  <button onClick={log}>Create Post</button>
+                  <button className="button is-info is-focused" onClick={log}>Create Post</button>
                 </div>
               </form>
             </div>
             <div className="currency-converter">
-              <h2>Currency Converter</h2>
+              <h2></h2>
             </div>
             <div className="timezone-converter">
-              <h2>Time Zone Converter</h2>
+              <h2>City Stats</h2>
               <form onSubmit={handleSubmit}>
-                <label>
+                <label id="display" className="label">
                   City:
                   <input
+                    className="input is-info"
                     type="text"
                     name="city"
                     value={city}
@@ -107,21 +146,12 @@ function Home() {
                     }}
                   />
                 </label>
-                <label>
-                  Country:
-                  <input
-                    type="text"
-                    name="country"
-                    value={country}
-                    onChange={(e) => {
-                      setCountry(e.target.value);
-                    }}
-                  />
-                </label>
-                <input type="submit" value="Submit" />
+                <input className="button is-info is-focused" type="submit" value="Submit" />
               </form>
-              <div className="timezone-display">
-
+              <div className="label">
+                <p>{city}  {country}</p>
+                <p>{weather}</p>
+                <p>{time}  {Day}</p>
               </div>
             </div>
             <div className="images"></div>
