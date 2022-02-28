@@ -1,5 +1,5 @@
 import React from "react";
-import DonationButton from "../Donate/Button";
+//import DonationButton from "../Donate/Button";
 
 function Footer() {
     return (
